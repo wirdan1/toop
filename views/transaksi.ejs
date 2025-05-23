@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi Error</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
+:root {
+    --primary-color: #4F46E5; /* Indigo */
+    --secondary-color: #10B981; /* Emerald */
+    --accent-color: #06B6D4; /* Cyan */
+    --bg-color: #0F172A; /* Slate 900 */
+    --card-bg: #1E293B; /* Slate 800 */
+    --text-color: #F1F5F9; /* Slate 100 */
+    --text-muted: #94A3B8; /* Slate 400 */
+    --error-color: #EF4444; /* Red 500 */
+    --font-main: 'Poppins', sans-serif;
+    --font-display: 'Montserrat', sans-serif;
+}
+body { 
+    font-family: var(--font-main); 
+    background: linear-gradient(135deg, var(--bg-color) 0%, #131f38 100%);
+    color: var(--text-color); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    margin: 0; 
+    padding: 20px; 
+    text-align: center; 
+}
+.message-container {
+    background: linear-gradient(145deg, var(--card-bg), #253654);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 1px rgba(255,255,255,0.1);
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+.message-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.1) 0%, rgba(15, 23, 42, 0) 70%);
+    z-index: 0;
+}
+.message-container > * {
+    position: relative;
+    z-index: 1;
+}
+.message-container h1 { 
+    font-family: var(--font-display); 
+    color: var(--error-color); 
+    margin-bottom: 20px; 
+    font-size: 2.2em; 
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+.message-container h1 i { 
+    margin-right: 15px; 
+}
+.message-container p { 
+    font-size: 1.15em; 
+    margin-bottom: 25px; 
+    line-height: 1.7; 
+    color: var(--text-color); 
+}
+.message-container .details { 
+    font-size: 0.9em; 
+    color: var(--text-muted); 
+    margin-top: -15px; 
+    margin-bottom: 30px; 
+    font-style: italic; 
+    padding: 10px 15px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    display: inline-block;
+}
+.message-container a {
+    display: inline-block; 
+    padding: 14px 28px; 
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: white; 
+    text-decoration: none; 
+    border-radius: 12px;
+    transition: all 0.3s ease; 
+    font-family: var(--font-main);
+    font-size: 1em; 
+    font-weight: 600; 
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+.message-container a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.6s ease;
+}
+.message-container a:hover::before {
+    left: 100%;
+}
+.message-container a:hover { 
+    transform: translateY(-2px) scale(1.03); 
+    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+}
+.message-container a i {
+    margin-right: 8px;
+}
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <h1><i class="fas fa-exclamation-circle"></i> Ada Kendala!</h1>
+        <p>Maaf, terjadi kesalahan saat memproses transaksi Anda. Mohon coba lagi nanti.</p>
+        <p class="details">Kode Kesalahan: 500</p>
+        <a href="/"><i class="fas fa-home"></i> Kembali ke Beranda</a>
+    </div>
+</body>
+</html>
